@@ -452,6 +452,8 @@ void manage_window(xcb_window_t window, xcb_get_window_attributes_cookie_t cooki
         xcb_reply_contains_atom(type_reply, A__NET_WM_WINDOW_TYPE_TOOLBAR) ||
         xcb_reply_contains_atom(type_reply, A__NET_WM_WINDOW_TYPE_SPLASH) ||
         xcb_reply_contains_atom(state_reply, A__NET_WM_STATE_MODAL) ||
+        xcb_reply_contains_atom(state_reply, _NET_WM_STATE_ABOVE) ||
+        xcb_reply_contains_atom(state_reply, _NET_WM_STATE_STAYS_ON_TOP) || 
         (cwindow->max_width > 0 && cwindow->max_height > 0 &&
          cwindow->min_height == cwindow->max_height &&
          cwindow->min_width == cwindow->max_width)) {
